@@ -12,6 +12,11 @@ jobs:
     - name: Maven Version
       run: mvn -version
 
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+      with:
+        ref: main  
+
     - name:  Check Project Working Directory
       run: |
         pwd
