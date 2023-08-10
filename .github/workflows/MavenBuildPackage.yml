@@ -1,0 +1,16 @@
+name: Maven_Build_Package 
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build_package:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Maven Version
+      run: mvn -version
+        
+
+
