@@ -17,10 +17,32 @@ jobs:
       with:
         ref: main  
 
-    - name:  Check Project Working Directory
+    - name:  Check Maven Project Working Directory
       run: |
         pwd
         ls -lrth
+        echo "workspace : ${{ github.workspace }}"
+
+    - name:  Validate POM file
+      run: |
+        mvn validate
+
+    - name:  Compile the code
+      run: |
+        mvn compile    
+
+    - name:  Test the code
+      run: |
+        mvn test
+
+    - name:  Clean the code
+      run: |
+          mvn clean 
+
+    - name:  Create a deployable package
+      run: |
+        mvn package                   
+
         
 
 
