@@ -11,6 +11,11 @@ jobs:
     steps:
     - name: Maven Version
       run: mvn -version
+
+    - name:  Check Project Working Directory
+      run: |
+        pwd
+        ls -lrth
         
 
 
