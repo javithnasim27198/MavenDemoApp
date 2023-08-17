@@ -16,13 +16,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         ref: main
-        
-    - name: Cache the Maven packages to speed up build
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2           
+                 
 
     - name:  Check Maven Project Working Directory
       run: |
@@ -33,18 +27,22 @@ jobs:
     - name:  Validate POM file
       run: |
         mvn validate
+        ls -lrth
 
     - name:  Compile the code
       run: |
-        mvn compile    
+        mvn compile
+        ls -lrth
 
     - name:  Test the code
       run: |
         mvn test
+        ls -lrth
 
     - name:  Clean the code
       run: |
-          mvn clean 
+          mvn clean
+          ls -lrth
 
     - name:  Create a deployable package
       run: |
