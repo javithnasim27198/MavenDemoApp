@@ -1,6 +1,7 @@
 name: Maven_Build_Package 
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
