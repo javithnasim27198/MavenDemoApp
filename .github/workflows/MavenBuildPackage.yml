@@ -60,6 +60,8 @@ jobs:
     - name: Uplaod artifact in workflow
       uses: actions/upload-artifact@v3
       with:
+
+ ###Test     
           name: maven-artifact
           path: target/demoapp-1.0-SNAPSHOT.jar    
     
